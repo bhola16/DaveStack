@@ -282,6 +282,101 @@ Keeping the technology data in a separate JSON file makes the application easier
 
 ---
 
+📚 React Questions & Answers
+
+1. What is JSX, and why is it used in React?
+
+JSX is a syntax that allows us to write HTML-like code inside JavaScript or TypeScript.
+
+It makes React components easier to write and understand because we can describe the UI directly inside the component.
+
+For example:
+
+const App = () => {
+return <h1>Dev Stack Builder</h1>;
+}; 2. What is the difference between props and state?
+
+Props are data passed from a parent component to a child component.
+
+State is data managed inside a component that can change over time.
+
+In this project, selectedTechs is state, while selectedTechs and setSelectedTechs are passed as props to child components.
+
+3. What does the useState hook do, and where did you use it in this project?
+
+useState allows a React component to store and update data.
+
+I used it in App.tsx to store the technology data promise and in TechnologyGrid.tsx to store the selected technologies.
+
+For example:
+
+const [selectedTechs, setSelectedTechs] = useState<ITechnology[]>([]);
+
+This state keeps track of the technologies currently added to the user's stack.
+
+4. What does the useEffect hook do, and why did you need it to load the JSON data?
+
+useEffect is used to perform side effects in React, such as fetching data, setting up event listeners, or updating something outside the component.
+
+In this project, I did not need useEffect to load the JSON data. Instead, I used an asynchronous function with fetch() and React's Suspense to handle the loading state.
+
+The JSON data is fetched from:
+
+/datafile.json
+
+and Suspense displays a loading message while the promise is pending.
+
+5. Why does every item in a .map() list need a unique key prop?
+
+React uses the key prop to identify each item in a list.
+
+A unique key helps React understand which items have been added, removed, or changed, so it can update the UI efficiently.
+
+In this project, the technology ID is used as the key:
+
+{techGrids.map((tech) => (
+<TechnologyCard
+    key={tech.id}
+    tech={tech}
+  />
+))} 6. What is conditional rendering? Show one place you used it (example: the empty stack message).
+
+Conditional rendering means displaying different UI depending on a condition.
+
+I used it in the Your Stack section to show an empty message when no technology has been selected.
+
+For example:
+
+{selectedTechs.length === 0 ? (
+
+  <p>No technologies selected yet.</p>
+) : (
+  // selected technologies
+)}
+
+When the stack is empty, the user sees the empty-state message. When technologies are selected, the selected items are displayed.
+
+7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+A parent passes data to a child using props.
+
+In this project, TechnologyGrid passes selectedTechs and setSelectedTechs to child components:
+
+<YourStack
+  selectedTechs={selectedTechs}
+  setSelectedTechs={setSelectedTechs}
+/>
+
+The child can send information or update the parent's state by calling the function received through props.
+
+For example, a technology card can call:
+
+setSelectedTechs([...selectedTechs, tech]);
+
+This updates the state that is managed by the parent component.
+
+---
+
 ## 👨‍💻 Author
 
 **Bholanath Bala**
