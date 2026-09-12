@@ -1,5 +1,7 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import Logo from "../assets/logo-text.png";
+import "../index.css"
+
 
 const Navbar = () => {
   return (
