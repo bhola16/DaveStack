@@ -19,7 +19,7 @@ function App() {
     <div>
       <Navbar></Navbar>
       <Banner></Banner>
-      <Suspense fallback={<h2 className="container mx-auto ">Loading..........</h2>}>
+      <Suspense fallback={<h2 className="ml-10"> Data Loading..........</h2>}>
         <TechnologyGrid techPromise={techPromise}></TechnologyGrid>
       </Suspense>
       <ToastContainer />
