@@ -1,5 +1,6 @@
-import Navbar from "./assets/Navbar"
+import Navbar from "./components/Navbar"
 import Banner from "./components/Banner"
+import Footer from "./components/Footer"
 
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
     <div>
       <Navbar></Navbar>
       <Banner></Banner>
+
+      <Footer></Footer>
     </div>
   )
 }
