@@ -1,10 +1,11 @@
+import Navbar from "./assets/Navbar"
 
 
 function App() {
 
   return (
     <div>
-      h2
+      <Navbar></Navbar>
     </div>
   )
 }
