@@ -18,7 +18,10 @@ const TechnologyCard = ({
   );
 
   const handleSelectTechs = () => {
+    
+
     setSelectedTechs([...selectedTechs, tech]);
+
   };
 
   return (
@@ -60,7 +63,7 @@ const TechnologyCard = ({
         </div>
       </div>
 
-      {/* Button  */}
+      {/* Add Button */}
       <button
         onClick={handleSelectTechs}
         className={`mt-5 w-full rounded-full py-2.5 text-sm font-bold text-white transition sm:text-base ${
