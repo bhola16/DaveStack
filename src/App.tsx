@@ -1,9 +1,10 @@
 import { Suspense, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import type { ITechnology } from "./type/Type";
 import TechnologyGrid from "./components/technology/TechnologyGrid";
+import type { ITechnology } from "./type/Type";
 
 const techFetch = async (): Promise<ITechnology[]> => {
   const res = await fetch("/datafile.json");
@@ -21,6 +22,7 @@ function App() {
       <Suspense fallback={<h2>Loading..........</h2>}>
         <TechnologyGrid techPromise={techPromise}></TechnologyGrid>
       </Suspense>
+      <ToastContainer />
 
       <Footer></Footer>
     </div>

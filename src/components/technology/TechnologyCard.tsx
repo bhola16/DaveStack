@@ -1,5 +1,6 @@
 import { type Dispatch, type SetStateAction } from "react";
 import { FaStar } from "react-icons/fa";
+import { Bounce, toast } from "react-toastify";
 import type { ITechnology } from "../../type/Type";
 
 interface ITechnologyCardProps {
@@ -18,10 +19,35 @@ const TechnologyCard = ({
   );
 
   const handleSelectTechs = () => {
-    
+    if (isSelected) {
+      toast.warning(`${tech.name} is already in your stack!`, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+
+      return;
+    }
 
     setSelectedTechs([...selectedTechs, tech]);
 
+    toast.success(`✓ ${tech.name} added to your stack!`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   return (

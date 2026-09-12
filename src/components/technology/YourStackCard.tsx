@@ -15,11 +15,32 @@ const YourStackCard = ({
   const handleRemove = (id: number, name: string) => {
     setSelectedTechs((prev) => prev.filter((tech) => tech.id !== id));
 
- 
+    toast.error(`${name} removed from your stack!`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   const handleRemoveAll = () => {
     setSelectedTechs([]);
+    toast.error(`Stack Cleared!`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   return (
