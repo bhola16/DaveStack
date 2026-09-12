@@ -1,5 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 import { RxCross2 } from "react-icons/rx";
+import { Bounce, toast } from "react-toastify";
 import type { ITechnology } from "../../type/Type";
 
 interface YourStackCardProps {
@@ -11,7 +12,15 @@ const YourStackCard = ({
   selectedTechs,
   setSelectedTechs,
 }: YourStackCardProps) => {
-  
+  const handleRemove = (id: number, name: string) => {
+    setSelectedTechs((prev) => prev.filter((tech) => tech.id !== id));
+
+ 
+  };
+
+  const handleRemoveAll = () => {
+    setSelectedTechs([]);
+  };
 
   return (
     <div>
@@ -43,6 +52,7 @@ const YourStackCard = ({
                 </div>
 
                 <button
+                  onClick={() => handleRemove(tech.id, tech.name)}
                   className="text-xl font-bold text-gray-600 hover:text-red-700"
                 >
                   <RxCross2 />
@@ -52,7 +62,7 @@ const YourStackCard = ({
           </div>
 
           <button
-            
+            onClick={handleRemoveAll}
             className="mt-5 w-full rounded-full bg-red-500 py-2.5 font-bold text-white hover:bg-red-600"
           >
             Remove All
