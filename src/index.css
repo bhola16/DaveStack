@@ -1,4 +1,4 @@
 @import "tailwindcss";
 .nav-item {
-  @apply cursor-pointer transition-all duration-300 hover:text-pink-500 ;
+  @apply text-gray-400  cursor-pointer transition-all duration-300 hover:text-pink-500 ;
 }

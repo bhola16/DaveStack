@@ -32,13 +32,13 @@ const YourStackCard = ({
     setSelectedTechs([]);
     toast.error(`Stack Cleared!`, {
       position: "bottom-right",
-      autoClose: 3000,
+      autoClose: 4000,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "light",
+      theme: "colored",
       transition: Bounce,
     });
   };

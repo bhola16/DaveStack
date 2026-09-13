@@ -67,8 +67,8 @@ const Footer = () => {
         </p>
 
         <div className="flex gap-4">
-          <p className="font-semibold text-gray-400">Privacy</p>
-          <p className="font-semibold text-gray-400">Terms</p>
+          <p className="font-semibold nav-item">Privacy</p>
+          <p className="font-semibold text-gray-400 nav-item">Terms</p>
         </div>
       </div>
     </footer>

@@ -15,7 +15,7 @@ const YourStack = ({ selectedTechs, setSelectedTechs }: YourStackProps) => {
 
         <p className="mt-1 text-lg text-gray-500">
           {selectedTechs.length === 0
-            ? "No technologies selected yet."
+            ? "No Technology Selected Yet."
             : `${selectedTechs.length} ${
                 selectedTechs.length === 1 ? "Technology" : "Technologies"
               } Selected`}
