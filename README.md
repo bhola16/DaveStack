@@ -1,4 +1,4 @@
-# Dev Stack Builder
+# 🧱 Dev Stack Builder
 
 **Dev Stack Builder** is a responsive React application that helps developers explore different technologies and build a personalized development stack.
 
@@ -6,13 +6,12 @@ The application provides a collection of frontend, backend, database, programmin
 
 ## 🚀 Live Demo
 
-**Vercel:** https://dave-stack.vercel.app/
-
-**Netlify:** https://davestackbhola.netlify.app/
+* **Vercel:** [Live Demo](https://dave-stack.vercel.app/)
+* **Netlify:** [Live Demo](https://davestackbhola.netlify.app/)
 
 ## 📂 GitHub Repository
 
-**GitHub:** https://github.com/bhola16/DaveStack
+**GitHub:** [DaveStack](https://github.com/bhola16/DaveStack)
 
 ---
 
@@ -20,15 +19,15 @@ The application provides a collection of frontend, backend, database, programmin
 
 ### 1. Explore Development Technologies
 
-Users can explore a collection of technologies with useful information including:
+Users can explore a collection of technologies with useful information, including:
 
-- Technology name
-- Category
-- Description
-- Technology icon
-- Rating
-- Difficulty level
-- Badge
+* Technology name
+* Category
+* Description
+* Technology icon
+* Rating
+* Difficulty level
+* Badge
 
 The technology data is loaded dynamically from a JSON file.
 
@@ -38,10 +37,10 @@ Users can create their own development stack by selecting technologies from the 
 
 The selected technologies are displayed in the **Your Stack** section, where users can:
 
-- View selected technologies
-- Remove individual technologies
-- Remove all selected technologies
-- See the total number of selected technologies
+* View selected technologies
+* Remove individual technologies
+* Remove all selected technologies
+* See the total number of selected technologies
 
 ### 3. Duplicate Selection Prevention
 
@@ -53,9 +52,9 @@ When a user attempts to add an already selected technology, the application disp
 
 The application is designed to work across different screen sizes.
 
-- 📱 Mobile: One technology card per row
-- 📱 Tablet: Two technology cards per row
-- 💻 Desktop: Three technology cards per row
+* 📱 **Mobile:** One technology card per row
+* 📱 **Tablet:** Two technology cards per row
+* 💻 **Desktop:** Three technology cards per row
 
 The navigation bar also provides different layouts for desktop, tablet, and mobile devices.
 
@@ -65,10 +64,10 @@ The navigation bar also provides different layouts for desktop, tablet, and mobi
 
 Notifications are displayed when:
 
-- A technology is added
-- A duplicate technology is attempted
-- A technology is removed
-- The entire stack is cleared
+* A technology is added
+* A duplicate technology is attempted
+* A technology is removed
+* The entire stack is cleared
 
 ### 6. Loading State
 
@@ -78,26 +77,26 @@ The technology data is loaded asynchronously from the local JSON file, and a loa
 
 The application uses a clean and modern interface with:
 
-- Responsive layouts
-- Gradient highlights
-- Rounded cards
-- Hover effects
-- Technology badges
-- Rating indicators
-- Responsive navigation
-- Responsive footer
+* Responsive layouts
+* Gradient highlights
+* Rounded cards
+* Hover effects
+* Technology badges
+* Rating indicators
+* Responsive navigation
+* Responsive footer
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **React** – UI development
-- **TypeScript** – Type-safe JavaScript
-- **Vite** – Development and build tool
-- **Tailwind CSS** – Styling and responsive design
-- **React Icons** – Icons used throughout the application
-- **React-Toastify** – Toast notifications
-- **JSON** – Local technology data
+* **React** – UI development
+* **TypeScript** – Type-safe JavaScript
+* **Vite** – Development and build tool
+* **Tailwind CSS** – Styling and responsive design
+* **React Icons** – Icons used throughout the application
+* **React-Toastify** – Toast notifications
+* **JSON** – Local technology data
 
 ---
 
@@ -126,7 +125,6 @@ The application contains 12 technologies covering different areas of development
 
 ```text
 DaveStack/
-
 ├── public/
 │   └── datafile.json
 │
@@ -211,24 +209,23 @@ The application follows a responsive-first approach using Tailwind CSS.
 
 ### Mobile
 
-- One technology card per row
-- Mobile navigation with hamburger menu
-- Centered logo
-- Responsive authentication buttons
-- Stacked banner layout
+* One technology card per row
+* Mobile navigation with hamburger menu
+* Centered logo
+* Stacked banner layout
 
 ### Tablet
 
-- Two technology cards per row
-- Tablet-specific navigation
-- Responsive spacing and typography
+* Two technology cards per row
+* Tablet-specific navigation
+* Responsive spacing and typography
 
 ### Desktop
 
-- Three technology cards per row
-- Full navigation menu
-- Technology section and stack displayed in a 9/3 layout
-- Expanded footer layout
+* Three technology cards per row
+* Full navigation menu
+* Technology section and stack displayed in a 9/3 layout
+* Expanded footer layout
 
 ---
 
@@ -307,7 +304,7 @@ State is data managed inside a component that can change over time.
 
 In this project, `selectedTechs` is state, while `selectedTechs` and `setSelectedTechs` are passed as props to child components.
 
-## 3. What does the useState hook do, and where did you use it in this project?
+## 3. What does the `useState` hook do, and where did you use it in this project?
 
 `useState` allows a React component to store and update data.
 
@@ -321,7 +318,7 @@ const [selectedTechs, setSelectedTechs] = useState<ITechnology[]>([]);
 
 This state keeps track of the technologies currently added to the user's stack.
 
-## 4. What does the useEffect hook do, and why did you need it to load the JSON data?
+## 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
 
 `useEffect` is used to perform side effects in React, such as fetching data, setting up event listeners, or updating something outside the component.
 
@@ -333,9 +330,9 @@ The JSON data is fetched from:
 /datafile.json
 ```
 
-and Suspense displays a loading message while the promise is pending.
+Suspense displays a loading message while the promise is pending.
 
-## 5. Why does every item in a `.map()` list need a unique key prop?
+## 5. Why does every item in a `.map()` list need a unique `key` prop?
 
 React uses the `key` prop to identify each item in a list.
 
@@ -344,16 +341,19 @@ A unique key helps React understand which items have been added, removed, or cha
 In this project, the technology ID is used as the key:
 
 ```tsx
-{
-  techGrids.map((tech) => <TechnologyCard key={tech.id} tech={tech} />);
-}
+{techGrids.map((tech) => (
+  <TechnologyCard
+    key={tech.id}
+    tech={tech}
+  />
+))}
 ```
 
 ## 6. What is conditional rendering? Show one place you used it (example: the empty stack message).
 
 Conditional rendering means displaying different UI depending on a condition.
 
-I used it in the Your Stack section to show an empty message when no technology has been selected.
+I used it in the **Your Stack** section to show an empty message when no technology has been selected.
 
 For example:
 
@@ -374,7 +374,10 @@ A parent passes data to a child using props.
 In this project, `TechnologyGrid` passes `selectedTechs` and `setSelectedTechs` to child components:
 
 ```tsx
-<YourStack selectedTechs={selectedTechs} setSelectedTechs={setSelectedTechs} />
+<YourStack
+  selectedTechs={selectedTechs}
+  setSelectedTechs={setSelectedTechs}
+/>
 ```
 
 The child can send information or update the parent's state by calling the function received through props.
@@ -393,7 +396,7 @@ This updates the state that is managed by the parent component.
 
 **Bholanath Bala**
 
-**GitHub:** https://github.com/bhola16
+**GitHub:** [bhola16](https://github.com/bhola16)
 
 ---
 
