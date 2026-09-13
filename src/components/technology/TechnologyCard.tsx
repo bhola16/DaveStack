@@ -51,7 +51,11 @@ const TechnologyCard = ({
   };
 
   return (
-    <div className="h-full rounded-2xl bg-white p-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-5 lg:p-6">
+    <div
+      className={`h-full rounded-2xl bg-white p-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-5 lg:p-6 ${
+        isSelected ? "border-2 border-black" : "border-2 border-transparent"
+      }`}
+    >
       {/* Icon + Badge */}
       <div className="flex items-center justify-between gap-3">
         <img
@@ -66,7 +70,11 @@ const TechnologyCard = ({
       </div>
 
       {/* Technology Name */}
-      <h2 className="mt-4 text-xl font-bold text-gray-800 sm:mt-5 sm:text-2xl">
+      <h2
+        className={`mt-4 text-xl font-bold sm:mt-5 sm:text-2xl ${
+          isSelected ? "text-red-500" : "text-gray-800"
+        }`}
+      >
         {tech.name}
       </h2>
 
